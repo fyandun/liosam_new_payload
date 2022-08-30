@@ -11,11 +11,12 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
-  <link name="xsens_imu"> </link>
+  <link name="vectornav"> </link>
   <joint name="imu_joint" type="fixed">
     <parent link="chassis_link" />
-    <child link="xsens_imu" />
+    <child link="vectornav" />
     <origin xyz="0 0 0" rpy="0 0 0" />
+    <!--origin xyz="0 0 0" rpy="${PI} 0 0" /-->    
   </joint>
 
   <link name="velodyne"> </link>
@@ -23,6 +24,7 @@
     <parent link="chassis_link" />
     <child link="velodyne" />
     <origin xyz="0 0 0" rpy="0 0 0" />
+    <!--origin xyz="0 0 0" rpy="${PI} 0 0" /-->    
   </joint>
 
   <link name="gps_link"> </link>
