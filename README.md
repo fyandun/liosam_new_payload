@@ -240,3 +240,7 @@ Part of the code is adapted from [LeGO-LOAM](https://github.com/RobustFieldAuton
 ## Acknowledgement
 
   - LIO-SAM is based on LOAM (J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time).
+  
+## Disclaimer
+
+  - Code adapted from the [original repo](https://github.com/TixiaoShan/LIO-SAM)  
