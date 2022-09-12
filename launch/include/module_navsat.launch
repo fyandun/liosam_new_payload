@@ -12,9 +12,9 @@
     <!-- Navsat -->
     <node pkg="robot_localization" type="navsat_transform_node" name="navsat" respawn="true">
         <!-- <rosparam param="datum">[42.35893211, -71.09345588, 0.0, world, base_link]</rosparam> -->
-        <remap from="imu/data" to="/vectornav/IMU" />
+        <remap from="imu/data" to="/vectornav/imu_enu" /> <!--/dji_sdk/imu-->
         <remap from="gps/fix" to="gps/fix" />
-        <remap from="odometry/filtered" to="odometry/navsat" />
+        <remap from="odometry/filtered" to="odometry/navsat" /> <!--/lio_sam/mapping/odometry odometry/navsat-->
     </node>
 
 </launch>
