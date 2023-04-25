@@ -1447,7 +1447,7 @@ public:
                 curGPSPoint.x = gps_x;
                 curGPSPoint.y = gps_y;
                 curGPSPoint.z = gps_z;
-                if (pointDistance(curGPSPoint, lastGPSPoint) < 0.5)
+                if (pointDistance(curGPSPoint, lastGPSPoint) < 0.5) //0.5 worked fine
                     continue;
                 else
                     lastGPSPoint = curGPSPoint;
@@ -1467,7 +1467,7 @@ public:
     void addLoopFactor()
     {
         if (loopIndexQueue.empty())
-            return;
+            return; 
 
         for (int i = 0; i < (int)loopIndexQueue.size(); ++i)
         {

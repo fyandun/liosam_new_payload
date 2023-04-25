@@ -3,7 +3,7 @@
     <arg name="project" default="lio_sam"/>
     
     <!-- Parameters -->
-    <rosparam file="$(find lio_sam)/config/params_new_payload_enu.yaml" command="load" /> <!--params_new_payload_outdoors, params_new_payload_ned, params_new_payload_enu-->
+    <rosparam file="$(find lio_sam)/config/params_new_payload_enu_gascola.yaml" command="load" /> <!--params_new_payload_enu, params_new_payload_outdoors, params_new_payload_ned, params_new_payload_enu-->
 
     <!--- LOAM -->
     <include file="$(find lio_sam)/launch/include/module_loam.launch" />
@@ -15,7 +15,8 @@
     <include file="$(find lio_sam)/launch/include/module_navsat.launch" />
     
     <node pkg="$(arg project)" type="gps_renameFrameID.py" name="$(arg project)_renameGPS_FrameID" output="screen">
-        <remap from="/gps_save" to="/dji_sdk/gps_position" />
+        <!--remap from="/gps_save" to="/dji_sdk/gps_position" /-->
+        <remap from="/gps_save" to="/fix" />        
     </node>    
 
     <!--- Run Rviz-->
