@@ -47,7 +47,7 @@ lio_sam:
   #extrinsicRPY: [1,  0, 0,
   #               0, 1, 0,
   #                0, 0, 1]
-  extrinsicRot: [0, 1, 0,
+	  extrinsicRot: [0, 1, 0,
                   -1, 0, 0,
                   0, 0, 1]
   extrinsicRPY: [0, -1, 0,
@@ -70,7 +70,7 @@ lio_sam:
   rotation_tollerance: 1000                     # radians
 
   # CPU Params
-  numberOfCores: 8                            # number of cores for mapping optimization
+  numberOfCores: 16                            # number of cores for mapping optimization
   mappingProcessInterval: 0.05                # seconds, regulate mapping frequency
 
   # Surrounding map

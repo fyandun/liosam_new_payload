@@ -12,8 +12,8 @@
     <!-- Navsat -->
     <node pkg="robot_localization" type="navsat_transform_node" name="navsat" respawn="true">
         <!-- <rosparam param="datum">[42.35893211, -71.09345588, 0.0, world, base_link]</rosparam> -->
-        <remap from="imu/data" to="/vectornav/IMU" /> <!--/dji_sdk/imu, /vectornav/imu_enu-->
-        <remap from="gps/fix" to="gps/fix" />
+        <remap from="imu/data" to="/airsim_ros_node/base_link_frd/imu/Imu" /> <!--/dji_sdk/imu, /vectornav/imu_enu-->
+        <remap from="gps/fix" to="/mavros/global_position/global" />
         <remap from="odometry/filtered" to="odometry/navsat" /> <!--/lio_sam/mapping/odometry odometry/navsat-->
     </node>
 
