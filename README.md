@@ -1,5 +1,23 @@
 # LIO-SAM
 
+This is a modified version of the original LIOSAM repo. While most of the instructions of the original one remain the same, there are some changes that need to be highlighted":
+
+- *Configuration files*: I've included a new config params file named [params_airsim.yaml](https://github.com/fyandun/liosam_new_payload/blob/airsim/config/params_airsim.yaml). This file contains the high level configuration of the repo. Some important variables to highlight here:
+  - gpsTopic: Topic that has odometry that has been fused using GPS and IMU using the robot localization package.
+  - gpsCovThreshold and poseCovThreshold: These two thresholds control how often the system includes the GPS measurements. Low values mean the GPS factor will be included if the confidence of that variable (GPS or estimated pose) is low. For example, a low value in GPS and large one in pose means that GPS measurements will be included when i) the confidence is high and ii) the lidar odometry confidence is low.
+  - Extrinsics Rot and RPY: Please see the Readme below. Basically the values here are set to the identity since the IMU and LiDAR are placed in the same ref frame, in the Airsim config.
+  - Yaw offset: This parameter needs to be tuned manually since for some reason it changes depending on the orientation of the drone during takeoff. Getting rid of this tunnig is **WIP**.
+
+- *URDF Configs*: This config file tells the system how the sensors are located with respect to each other (extrinsic parameters). The file [robot_airsim.urdf.xacro](https://github.com/fyandun/liosam_new_payload/blob/airsim/launch/include/config/robot_airsim.urdf.xacro) accounts for the config of Airsim. It is noteworthy that the LiDAR has a roll rotation of 180 deg. This accounts for the rotation of the sensor in the simulator.
+
+- *Launch file*: To launch the airsim processing pipeline, do:
+```
+roslaunch lio_sam run_new_airsim.launch 
+```
+
+**From here and onwards, the instructions remain the same as the original repo.**
+
+
 **A real-time lidar-inertial odometry package. We strongly recommend the users read this document thoroughly and test the package with the provided dataset first. A video of the demonstration of the method can be found on [YouTube](https://www.youtube.com/watch?v=A0H8CoORZJU).**
 
 <p align='center'>
