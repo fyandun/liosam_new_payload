@@ -10,6 +10,8 @@ This is a modified version of the original LIOSAM repo. While most of the instru
 
 - *URDF Configs*: This config file tells the system how the sensors are located with respect to each other (extrinsic parameters). The file [robot_airsim.urdf.xacro](https://github.com/fyandun/liosam_new_payload/blob/airsim/launch/include/config/robot_airsim.urdf.xacro) accounts for the config of Airsim. It is noteworthy that the LiDAR has a roll rotation of 180 deg. This accounts for the rotation of the sensor in the simulator.
 
+- *CMAKE lists*: The path to OPENCV 3.1.1 is [hard coded](https://github.com/fyandun/liosam_new_payload/blob/dc6ba07b9bfe748b52dfab031817c8366f5c267f/CMakeLists.txt#L27). This is a ugly configuration, but it is needed when having different OPENCV versions installed. LIOSAM won't compile with the most recent versions.
+
 - *Launch file*: To launch the airsim processing pipeline, do:
 ```
 roslaunch lio_sam run_new_airsim.launch 
